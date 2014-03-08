@@ -34,7 +34,7 @@ The name of the HTML file to read the tags from.
 
 Type: `String`
 
-Any valid CSS selector.
+Any valid CSS selector.  You can use complex selectors to allow flexible include/exclude logic for your tags.  For example, use a selector such as `script[data-concat!="false"]` and put `data-concat="false"` on any script tags you wish to exclude from a concat/minification stream.
 
 
 #### config.attribute
