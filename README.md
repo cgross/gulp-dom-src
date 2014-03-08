@@ -52,3 +52,7 @@ Default: `{}`
 Options passed through to the underlying `vinyl-fs`.  Can include options like `read` and `buffer`.
 
 
+
+Release History
+-------------
+* 3/08/2014 - v0.1.0 - Initial release.
