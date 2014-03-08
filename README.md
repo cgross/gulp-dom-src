@@ -1,4 +1,4 @@
-# gulp-dom-src [![Build Status](https://travis-ci.org/cgross/gulp-dom-src.png?branch=master)](https://travis-ci.org/cgross/gulp-dom-src)
+# gulp-dom-src [![Build Status](https://travis-ci.org/cgross/gulp-dom-src.png)](https://travis-ci.org/cgross/gulp-dom-src)
 
 > Create a gulp stream from script, link, or any set of tags in an HTML file.
 
