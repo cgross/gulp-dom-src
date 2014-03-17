@@ -43,10 +43,15 @@ Type: `String`
 
 The name of the attribute that contains the file path.  Typically `src` for `script` tags and `href` for `link`s.
 
+#### config.cwd
+
+Type: `String` (Optional)
+
+The directory where the paths in your tags are relative to.  By default, the files references in your script or link tags are assumed to be relative to the HTML file they're read from.
 
 #### config.options
 
-Type: `Object`
+Type: `Object` (Optional)
 Default: `{}`
 
 Options passed through to the underlying `vinyl-fs`.  Can include options like `read` and `buffer`.
@@ -92,4 +97,5 @@ gulp.task('indexHtml', function() {
 
 Release History
 -------------
+* 3/17/2014 - v0.1.1 - Added `cwd` option.
 * 3/08/2014 - v0.1.0 - Initial release.

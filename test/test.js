@@ -31,4 +31,20 @@ it('should read the script tags src into the stream', function (done) {
 
 });
 
+it('should use the cwd property correctly.', function (done) {
+
+    var onEnd = function(){
+        buffered.length.should.equal(1);
+        should.exist(buffered[0].stat);
+        buffered[0].path.should.equal(path.resolve('test/fixture/one.js'));
+        done();
+    };
+
+    var stream = domSrc({file:'test/fixture/subdir/subdir.html',selector:'script',attribute:'src',cwd:'test/fixture'});
+
+    var buffered = [];
+    var bufferStream = through.obj(dataWrap(buffered.push.bind(buffered)), onEnd);
+    stream.pipe(bufferStream);
+
+});
 
