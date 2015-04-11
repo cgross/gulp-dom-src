@@ -110,4 +110,26 @@ describe('duplex mode', function () {
         var bufferStream = through.obj(dataWrap(buffered.push.bind(buffered)), onEnd);
         stream.pipe(bufferStream);
     });
+
+    it('should handle multiple incoming html files', function(done) {
+
+        var onEnd = function(){
+            buffered.length.should.equal(3);
+            should.exist(buffered[0].stat);
+            buffered[0].path.should.equal(path.resolve('test/fixture/one.js'));
+            buffered[1].path.should.equal(path.resolve('test/fixture/two.js'));
+            buffered[2].path.should.equal(path.resolve('test/fixture/three.js'));
+            done();
+        };
+
+        var stream = vfs.src('test/fixture/template{1,2}.html')
+            .pipe(domSrc.duplex({
+                selector:'script',
+                attribute:'src'
+            }));
+
+        var buffered = [];
+        var bufferStream = through.obj(dataWrap(buffered.push.bind(buffered)), onEnd);
+        stream.pipe(bufferStream);
+    });
 });
