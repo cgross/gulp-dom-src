@@ -60,9 +60,7 @@ Options passed through to the underlying `vinyl-fs`.  Can include options like `
 
 Creates a stream that html files can be piped into -- html files in, script or style files out.
 
-#### config.selector
-#### config.attribute
-#### config.cwd
+#### config.selector, config.attribute, config.cwd
 
 See above
 
