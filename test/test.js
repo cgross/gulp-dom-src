@@ -132,4 +132,24 @@ describe('duplex mode', function () {
         var bufferStream = through.obj(dataWrap(buffered.push.bind(buffered)), onEnd);
         stream.pipe(bufferStream);
     });
+
+    it('should emit an error when a referenced file is not found', function(done) {
+
+        var onEnd = function(){
+            done(new Error('onEnd should not have been called'));
+        };
+
+        var stream = vfs.src('test/fixture/bad-script-tag.html')
+            .pipe(domSrc.duplex({
+                selector:'script',
+                attribute:'src'
+            }));
+
+        var buffered = [];
+        var bufferStream = through.obj(dataWrap(buffered.push.bind(buffered)), onEnd);
+
+        stream.on('error', function(err) {
+            done();
+        }).pipe(bufferStream);
+    });
 });
