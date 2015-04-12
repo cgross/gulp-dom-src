@@ -56,6 +56,14 @@ Default: `{}`
 
 Options passed through to the underlying `vinyl-fs`.  Can include options like `read` and `buffer`.
 
+### domSrc.duplex(config)
+
+Creates a stream that html files can be piped into -- html files in, script or style files out.
+
+#### config.selector, config.attribute, config.cwd
+
+See above
+
 End-to-End Concatenation and Minification
 -------------
 
