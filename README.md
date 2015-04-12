@@ -105,5 +105,6 @@ gulp.task('indexHtml', function() {
 
 Release History
 -------------
+* 4/12/2015 - v0.2.0 - Added duplex feature from @psalaets.
 * 3/17/2014 - v0.1.1 - Added `cwd` option.
 * 3/08/2014 - v0.1.0 - Initial release.
