@@ -1,6 +1,6 @@
 {
   "name": "gulp-dom-src",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Create a gulp stream from script/link tags in an HTML file.",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
     "extend": "~2.0.0",
     "through2": "~0.4.1",
     "vinyl-file": "~1.1.1",
-    "vinyl-fs": "~0.1.0"
+    "vinyl-fs": "^3.0.0"
   },
   "devDependencies": {
     "mocha": "~1.17.1",
